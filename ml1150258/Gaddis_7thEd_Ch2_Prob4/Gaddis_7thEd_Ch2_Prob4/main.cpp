@@ -2,6 +2,7 @@
   David Ballantyne
   01/08/14
   purpose:Gaddis_7thEd_Ch2_prob4
+  Version 2 - Dr. Mark E. Lehr
 */
 //Libraries
 #include <iomanip>
