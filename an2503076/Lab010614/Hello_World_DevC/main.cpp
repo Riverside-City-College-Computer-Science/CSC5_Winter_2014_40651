@@ -1,24 +1,24 @@
 /*
-  Genaro Reyes
-  January 6th, 2013
-  First program in DevC\
-*/
+  Alejandro Najera
+  January 6th, 2014
+  First program in DevC
+  */
 
-//System libraries
-#include <cstdlib>
+//System Libraries
 #include <iostream>
+
 using namespace std;
 
 //Global Constants
 
 //Function Prototypes
 
-
-//Execution Begins here
+//Execution Begins Here!
 int main(int argc, char *argv[]){
-    //Print Hello World
+    //print the string Hello world
     cout<<"Hello World"<<endl;
-    //Exit Stage Right
+    
+    //Exit stage right
     system("PAUSE");
     return EXIT_SUCCESS;
 }
