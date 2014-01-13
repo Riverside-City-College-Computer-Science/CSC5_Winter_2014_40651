@@ -1,5 +1,5 @@
 /* 
- * File:   Chapter 2 problem:1
+ * File:  Chapter 2 problem:1
  * Author: Julian Gonzalez
  * Program: Sum of Two Numbers
  * Created on January 7, 2014, 8:40 PM
