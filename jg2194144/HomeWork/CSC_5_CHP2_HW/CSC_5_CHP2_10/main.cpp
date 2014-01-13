@@ -1,5 +1,4 @@
-/* 
- * File:   Chapter 2 Problem 10
+/* File:   Chapter 2 Problem 10
  * Author: Julian Gonzalez
  * Program: Miles Per Gallon
  * Created on January 8, 2014, 3:02 PM

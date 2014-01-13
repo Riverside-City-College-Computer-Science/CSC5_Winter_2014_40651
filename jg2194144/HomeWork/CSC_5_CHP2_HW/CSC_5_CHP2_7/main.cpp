@@ -1,5 +1,5 @@
 /* 
- * File:   Chapter 2 Problem 7
+ * File:  Chapter 2 Problem 7
  * Author: Julian Gonzalez
  * Program: Ocean Levels
  * Created on January 8, 2014, 2:16 PM

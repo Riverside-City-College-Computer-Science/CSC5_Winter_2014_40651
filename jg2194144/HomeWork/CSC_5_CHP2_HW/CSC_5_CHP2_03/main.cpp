@@ -1,5 +1,5 @@
 /* 
- * File:   Chapter 2 Problem 4
+ * File:  Chapter 2 Problem 4
  * Author: Julian Gonzalez
  * Program:  Restaurant Bill
  *

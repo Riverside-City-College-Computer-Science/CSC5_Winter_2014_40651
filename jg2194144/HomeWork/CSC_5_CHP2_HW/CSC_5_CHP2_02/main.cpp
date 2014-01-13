@@ -1,5 +1,5 @@
 /* 
- * File:   Chapter 2 problem 2
+ * File:  Chapter 2 problem 2
  * Author: Julian Gonzalez
  * Program: Sales Prediction
  * 

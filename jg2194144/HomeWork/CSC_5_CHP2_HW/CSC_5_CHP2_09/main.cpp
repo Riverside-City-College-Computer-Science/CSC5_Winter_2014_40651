@@ -1,5 +1,4 @@
-/* 
- * File:   Chapter 2 Problem 9
+/* File:   Chapter 2 Problem 9
  * Author: Julian Gonzalez
  * Program: Cyborg Data Type Sizes
  * Created on January 8, 2014, 2:38 PM
