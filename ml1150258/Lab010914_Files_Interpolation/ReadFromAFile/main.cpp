@@ -31,8 +31,8 @@ int main(int argc, char *argv[]){
         <<"would you like to convert to degree c"<<endl;
     cin>>f;
     //Calculate 2 differnt ways
-    cEq=5.0/9*(f-32);
-    cIntrp=c1+(c2-c1)*(f-f1)/static_cast<float>(f2-f1);
+    cEq=static_cast<short>(5.0f/9*(f-32));
+    cIntrp=static_cast<short>(c1+(c2-c1)*(f-f1)/static_cast<float>(f2-f1));
     //The resulting temperature is
     cout<<"The C by Equation = "<<cEq<<endl;
     cout<<"The C by Interpolation = "<<cIntrp<<endl;
