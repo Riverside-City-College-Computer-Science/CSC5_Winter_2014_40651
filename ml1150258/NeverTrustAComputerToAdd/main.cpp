@@ -15,7 +15,7 @@ using namespace std;
 //Begin Execution Here
 int main(int argc, char** argv) {
     //Declare variables
-    float sum=0.0f,frac=0.1f,prod;
+    float sum=0.0f,frac=0.5f,prod;
     int loop=1e7;//10 million
     //Loop
     for(int i=1;i<=loop;i++){
