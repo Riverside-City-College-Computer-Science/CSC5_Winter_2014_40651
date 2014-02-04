@@ -15,12 +15,12 @@ using namespace std;
 
 //Function Prototypes
 void filVec(vector<int> &,int);
-void prntVec(vector<int> &,int);
+void prntVec(const vector<int> &,int);
 void swap(int &,int &);
 void swap(vector<int> &,int,int);
 void minPos(vector<int> &,int);
 void mrkSort(vector<int> &);
-void copy(vector<int> &,vector<int> &);
+void xcopy(const vector<int> &,vector<int> &);
 
 //Executions Begin Here!
 int main(int argc, char** argv) {
@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     //Fill the arrays
     filVec(array,SIZE);
-    copy(array,brray);
+    xcopy(array,brray);
     //Print the array
     prntVec(array,10);
     //Test out the min pos routine
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void copy(vector<int> &a,vector<int> &b){
+void xcopy(const vector<int> &a,vector<int> &b){
     for(int i=0;i<a.size();i++){
         b.push_back(a[i]);
     }
@@ -74,7 +74,7 @@ void swap(vector<int> &a,int i,int j){
     a[j]=temp;
 }
 
-void prntVec(vector<int> &a,int perLine){
+void prntVec(const vector<int> &a,int perLine){
     cout<<endl;
     for(int i=0;i<a.size();i++){
         cout<<a[i]<<" ";

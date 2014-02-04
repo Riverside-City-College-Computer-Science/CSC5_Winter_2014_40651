@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <fstream>
 using namespace std;
 
 //Global Constants
@@ -23,21 +24,32 @@ void xcopy(const int [],int [],int);
 
 //Executions Begin Here!
 int main(int argc, char** argv) {
+    //Open a file to record the data
+    ofstream output;
+    output.open("TimeStudy.dat");
     //Declare variables and initialize the
     //random number generator
-    const int SIZE=200;
+    const int SIZE=150000;
     int array[SIZE],brray[SIZE];
     srand(static_cast<unsigned int>(time(0)));
     //Fill the arrays
     filAray(array,SIZE);
-    xcopy(array,brray,SIZE);
     //Print the array
-    prntAry(array,SIZE,10);
+    //prntAry(array,SIZE,10);
     //Test out the min pos routine
-    mrkSort(brray,SIZE);
+    for(int size=10000;size<SIZE;size+=10000){
+        xcopy(array,brray,size);
+        int strTime=time(0);
+        mrkSort(brray,size);
+        int endTime=time(0);
+        cout<<"Total Time Taken = "<<endTime-strTime
+                <<" secs for array size = "<<size<<endl;
+        output<<size<<" "<<endTime-strTime<<endl;
+    }
     //Print the array
-    prntAry(brray,SIZE,10);
+    //prntAry(brray,SIZE,10);
     //Exit Stage Right!!!
+    output.close();
     return 0;
 }
 
@@ -87,16 +99,3 @@ void filAray(int a[],int n){
         a[i]=rand()%90+10;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

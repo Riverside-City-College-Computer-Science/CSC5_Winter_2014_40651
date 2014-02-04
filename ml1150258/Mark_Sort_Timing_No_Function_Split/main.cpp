@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <fstream>
 using namespace std;
 
 //Global Constants
@@ -15,29 +16,37 @@ using namespace std;
 //Function Prototypes
 void filAray(int [],int);
 void prntAry(const int [],int,int);
-void swap(int &,int &);
-void swap(int [],int,int);
-void minPos(int [],int,int);
 void mrkSort(int [],int);
 void xcopy(const int [],int [],int);
 
 //Executions Begin Here!
 int main(int argc, char** argv) {
+    //Open a file to record the data
+    ofstream output;
+    output.open("TimeStudy.dat");
     //Declare variables and initialize the
     //random number generator
-    const int SIZE=200;
+    const int SIZE=150000;
     int array[SIZE],brray[SIZE];
     srand(static_cast<unsigned int>(time(0)));
     //Fill the arrays
     filAray(array,SIZE);
-    xcopy(array,brray,SIZE);
     //Print the array
-    prntAry(array,SIZE,10);
+    //prntAry(array,SIZE,10);
     //Test out the min pos routine
-    mrkSort(brray,SIZE);
+    for(int size=10000;size<SIZE;size+=10000){
+        xcopy(array,brray,size);
+        int strTime=time(0);
+        mrkSort(brray,size);
+        int endTime=time(0);
+        cout<<"Total Time Taken = "<<endTime-strTime
+                <<" secs for array size = "<<size<<endl;
+        output<<size<<" "<<endTime-strTime<<endl;
+    }
     //Print the array
-    prntAry(brray,SIZE,10);
+    //prntAry(brray,SIZE,10);
     //Exit Stage Right!!!
+    output.close();
     return 0;
 }
 
@@ -48,28 +57,15 @@ void xcopy(const int a[],int b[],int n){
 }
 
 void mrkSort(int a[],int n){
-    for(int i=0;i<n-1;i++){
-        minPos(a,n,i);
+    for(int pos=0;pos<n-1;pos++){
+        for(int i=pos+1;i<n;i++){
+            if(a[pos]>a[i]){
+                int temp=a[pos];
+                a[pos]=a[i];
+                a[i]=temp;
+            }
+        }
     }
-}
-
-void minPos(int a[],int n,int pos){
-    for(int i=pos+1;i<n;i++){
-        if(a[pos]>a[i])swap(a[pos],a[i]);
-        //if(a[pos]>a[i])swap(a,pos,i);
-    }
-}
-
-void swap(int &a,int &b){
-    int temp=a;
-    a=b;
-    b=temp;
-}
-
-void swap(int a[],int i,int j){
-    int temp=a[i];
-    a[i]=a[j];
-    a[j]=temp;
 }
 
 void prntAry(const int a[],int n,int perLine){
@@ -87,16 +83,3 @@ void filAray(int a[],int n){
         a[i]=rand()%90+10;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
